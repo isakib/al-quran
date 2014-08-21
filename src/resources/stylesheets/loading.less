@@ -1,0 +1,32 @@
+.loadingbar {
+    position: fixed;
+    bottom: -@loadingbar-height;
+    left: 0px;
+    right: 0px;
+    padding: 0px 15px;
+    height: @loadingbar-height;
+    border-top: 1px solid #e8e8e8;
+    line-height: @loadingbar-height;
+    .transition(bottom ease 300ms);
+
+    .message {
+        float: left;
+    }
+
+    .icon {
+        float: right;
+        font-size: 18px;
+        line-height: @loadingbar-height;
+        color: @brand-success;
+    }
+}
+
+body.show-loadingbar {
+    .loadingbar {
+        bottom: 0px;
+    }
+
+    .book {
+        bottom: @loadingbar-height;
+    }
+}

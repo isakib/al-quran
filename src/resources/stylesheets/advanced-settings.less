@@ -1,0 +1,23 @@
+.advanced-settings{
+	z-index: 1000;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 20%;
+	height: 100%;
+	transition: 1s;
+	-webkit-transform: translateX(-100%);
+	background: @book-background;
+	&.displayed{
+		-webkit-transform: translateX(0);
+	}
+	form li{
+		border-width: 0;
+		border-top-width: 1px;
+	}
+	.setting-actions{
+		.btn{
+			width:50%;
+		}
+	}
+}

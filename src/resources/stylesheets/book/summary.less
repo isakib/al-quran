@@ -1,0 +1,128 @@
+.book .summary {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background: #f8f8f8;
+    border-right: 1px solid #e8e8e8;
+
+    h1 {
+        margin: 10px;
+        font-size: 16px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .inner {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        overflow-y: auto;
+    }
+
+    .trash {
+        position: absolute;
+
+        bottom: 8px;
+        right: 8px;
+        left: 8px;
+
+        display: none;
+
+        padding: 10px;
+        text-align: center;
+        color: @summary-color;
+        border: 2px dashed @summary-color;
+
+        .transition(border-color 400ms ease);
+
+        &.dragover {
+            border-color: darken(@summary-color, 20%);
+        }
+    }
+
+    &.with-trash {
+        .inner {
+            bottom: 60px;
+        }
+
+        .trash {
+            display: block;
+        }
+    }
+
+    .articles {
+        margin: 0px;
+        padding: 0px;
+
+        list-style: none;
+
+        .article {
+            margin: 0px;
+            padding: 0px;
+
+            position: relative;
+            cursor: pointer;
+
+            &.active {
+                > .chapter-title, > .chapter-title:hover {
+                    color: @brand-primary;
+                }
+            }
+
+            &.modified {
+                > .chapter-title {
+                    border-left-color: @brand-warning !important;
+                }
+            }
+
+            &.move,
+            &.active.move {
+                position: fixed;
+                z-index: 100000;
+                pointer-events:none;
+                background: #fff;
+                border: 1px solid @book-color;
+                width: 180px;
+
+                .chapter-articles {
+                    display: none;
+                }
+
+                * {
+                    pointer-events:none;
+                }
+            }
+
+            &.dragover {
+                border-top: 2px solid @brand-success;
+            }
+
+            .chapter-title {
+                padding: 8px 10px;
+                display: block;
+                border-left: 4px solid transparent;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                .user-select(none);
+
+                &:hover {
+                    color: lighten(@brand-primary, 25%);
+                }
+
+                b {
+                    font-weight: normal;
+                }
+            }
+
+            &:hover {
+                > .chapter-actions {
+                    .opacity(1);
+                }
+            }
+        }
+    }
+}
