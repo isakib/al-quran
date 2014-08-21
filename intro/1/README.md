@@ -1,13 +1,6 @@
-# 1
 
-<div>
-
-###         Surat Al-F&#257;ti&#293;ah -
+ Surat Al-F&#257;ti&#293;ah -
          سورة الفاتحة
-
-
-   </div>
-
 
 <p class="clear"/>
 <div id="quranOutput">
